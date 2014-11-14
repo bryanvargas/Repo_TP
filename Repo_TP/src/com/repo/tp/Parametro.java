@@ -52,6 +52,45 @@ public class Parametro <T1,T2>{
 	
 	
 	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((angulo == null) ? 0 : angulo.hashCode());
+		result = prime * result + ((dim == null) ? 0 : dim.hashCode());
+		//result = prime * result + ((pares == null) ? 0 : pares.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Parametro other = (Parametro) obj;
+		if (angulo == null) {
+			if (other.angulo != null)
+				return false;
+		} else if (!angulo.equals(other.angulo))
+			return false;
+		if (dim == null) {
+			if (other.dim != null)
+				return false;
+		} else if (!dim.equals(other.dim))
+			return false;
+//		if (pares == null) {
+//			if (other.pares != null)
+//				return false;
+//		} else if (!pares.equals(other.pares))
+//			return false;
+		return true;
+	}
+
 	public String toString(){		
 		String salida = "";
 		//for(Parametro<T1,T2> p : pares)

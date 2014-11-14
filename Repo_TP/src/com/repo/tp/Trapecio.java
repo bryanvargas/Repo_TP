@@ -15,15 +15,4 @@ public class Trapecio extends Poligono{
 			
 		}
 
-		
-	
-	
-	@Override
-	public String toString() {	
-		
-		return super.toString()+" base B " + this.dimenciones.iesimo(1).getDim()
-				+" base b " +this.dimenciones.iesimo(2).getDim()+
-				" altura "+this.dimenciones.iesimo(3).getDim();
-	}
-
 }

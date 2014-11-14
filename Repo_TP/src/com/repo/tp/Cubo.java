@@ -9,8 +9,6 @@ public class Cubo extends Cuadrado {
 	@Override
 	public double area(){
 		return this.area()*2;
-	}
-
-	
+	}	
 	
 }

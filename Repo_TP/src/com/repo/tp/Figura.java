@@ -20,60 +20,65 @@ public abstract class Figura {
 	}
 	
 
-	public abstract double area();
-	public abstract double perimetro();
-	//@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + ((dim == null) ? 0 : dim.hashCode());
-//		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-//		return result;
-//	}
-//
-//	@Override
+	
+	
+	
+	public Parametro<Double, Integer> getDimenciones() {
+		return dimenciones;
+	}
+
+	public void setDimenciones(Parametro<Double, Integer> dimenciones) {
+		this.dimenciones = dimenciones;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((dimenciones == null) ? 0 : dimenciones.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
+
+	@Override
 	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		if(obj.getClass() != null)
-//			return false;
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
 		Figura other = (Figura) obj;
+		if (dimenciones == null) {
+			if (other.dimenciones != null)
+				return false;
+		} else if (!dimenciones.equals(other.dimenciones))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+
 		int parametrosA = this.dimenciones.pares.size();
 		int parametrosB = other.dimenciones.pares.size();
 		if(parametrosA!=parametrosB){
 			return false;
 		}
-//
-//		if (nombre == null) {
-//			if (other.nombre != null)
+//		for (Parametro<Double,Integer> tupla : dimenciones.pares) {
+//			for(Parametro<Double,Integer> tupla2 : other.dimenciones.pares){
+//				if(tupla.equals(tupla2));				
 //				return false;
-//		} else if (!nombre.equals(other.nombre))
-//			return false;
-
-		for (Parametro<Double,Integer> tupla : dimenciones.pares) {
-			for(Parametro<Double,Integer> tupla2 : other.dimenciones.pares){
-				if(!tupla.equals(tupla2));
-				return false;
-			}	
-		}
+//			}	
+//		}
+		
+		
 		return true;
 	}
-//
-//	public abstract double perimetro();
-//
-//
-//	@Override
-//	public String toString() {
-//		String salida ="";
-//		for(Parametro<Double,Integer> p:dimenciones.pares)
-//			salida+="lado"+p.toString();
-//		return  this.nombre +" "+ salida;
-//	}
-//	
+
+	public abstract double area();
+	public abstract double perimetro();
 	
 	public String toString(){
 		return this.nombre+dimenciones.toString();

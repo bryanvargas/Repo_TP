@@ -19,46 +19,13 @@ public class Dibujo {
 	}
 	
 	
-	public String toString(){
-		String salida = "";
-		salida += nombre + ":\n";
-		for(int i=0;i<dibujo.size();i++){
-			Tupla<Coordenada, Figura> aux = dibujo.get(i);			
-			salida += aux.x.toString() +" "+ aux.y.toString() + "\n";
 
-		}
-		return salida;
-		
-	}
 	
 	public int cantidad(){
 		return dibujo.size();
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((dibujo == null) ? 0 : dibujo.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
-	}
 
-	@Override
-	public boolean equals(Object otroDibujo) {
-		boolean ret=true;
-		boolean ret2=false;
-		Dibujo otroDib = (Dibujo)otroDibujo;
-		for (Tupla<Coordenada,Figura> tupla : dibujo) {
-			for(Tupla<Coordenada,Figura> otraTupla: otroDib.dibujo){
-				ret2=ret2 || tupla.equals(otraTupla);
-						//|| tupla.y.equals(otroDib);
-			}
-			ret=ret && ret2;
-			ret2=false;
-		}	
-		return ret;
-	}
 	
 	public Dibujo union(Dibujo d2){
 		Dibujo dibujoUnion = new Dibujo("DibujoUnion()");
@@ -84,7 +51,40 @@ public class Dibujo {
 		return dibujoInterseccion;
 	   }
 	
-		
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dibujo == null) ? 0 : dibujo.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		return result;
+	}
 
-	
+	@Override
+	public boolean equals(Object otroDibujo) {
+		boolean ret=true;
+		boolean ret2=false;
+		Dibujo otroDib = (Dibujo)otroDibujo;
+		for (Tupla<Coordenada,Figura> tupla : dibujo) {
+			for(Tupla<Coordenada,Figura> otraTupla: otroDib.dibujo){
+				ret2=ret2 || tupla.equals(otraTupla)
+						|| tupla.y.equals(otroDib);
+			}
+			ret=ret && ret2;
+			ret2=false;
+		}	
+		return ret;
+	}	
+
+	public String toString(){
+		String salida = "";
+		salida += nombre + ":\n";
+		for(int i=0;i<dibujo.size();i++){
+			Tupla<Coordenada, Figura> aux = dibujo.get(i);			
+			salida += aux.x.toString() +" "+ aux.y.toString() + "\n";
+
+		}
+		return salida;
+		
+	}
 }
