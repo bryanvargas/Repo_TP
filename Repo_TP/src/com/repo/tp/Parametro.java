@@ -24,36 +24,18 @@ public class Parametro <T1,T2>{
 	public void setDim(T1 dim) {
 		this.dim = dim;
 	}
-
-
-
-
 	public T2 getAngulo() {
 		return angulo;
 	}
-
-
-
-
 	public void setAngulo(T2 angulo) {
 		this.angulo = angulo;
 	}
-
-
-
-
-	public void agregar(Parametro<T1,T2> p){
-		pares.add(p);	
-	}
-	
+//	public void agregar(Parametro<T1,T2> p){
+//		pares.add(p);	
+//	}	
 	public Parametro<T1,T2> iesimo(int i){
 		return  pares.get(i);
-	}
-	
-	
-	
-	
-	
+	}	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -63,7 +45,6 @@ public class Parametro <T1,T2>{
 		//result = prime * result + ((pares == null) ? 0 : pares.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -72,7 +53,8 @@ public class Parametro <T1,T2>{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Parametro other = (Parametro) obj;
+		@SuppressWarnings("unchecked")
+		Parametro<T1,T2> other = (Parametro<T1, T2>) obj;
 		if (angulo == null) {
 			if (other.angulo != null)
 				return false;
@@ -83,18 +65,12 @@ public class Parametro <T1,T2>{
 				return false;
 		} else if (!dim.equals(other.dim))
 			return false;
-//		if (pares == null) {
-//			if (other.pares != null)
-//				return false;
-//		} else if (!pares.equals(other.pares))
-//			return false;
+
 		return true;
 	}
 
 	public String toString(){		
-		String salida = "";
-		//for(Parametro<T1,T2> p : pares)
-			//salida +=" dimencion y angulo: "+p.angulo.toString()+" "+p.dim.toString();
+		String salida = "";		
 		for(int i=0;i<pares.size();i++){
 			salida+= " de largo"+(i+1)+": " +"("+pares.get(i).dim.toString()+")"+
 						" angulo: "+ "("+pares.get(i).angulo.toString()+"); ";
@@ -106,5 +82,13 @@ public class Parametro <T1,T2>{
 	public void agregar(T1 i, T2 d) {
 		this.pares.add(new Parametro<T1,T2>(i,d));	
 	}
+	
+//	public  Parametro<T1, T2> agregar(T1 dim,T2 angulo){
+//		Parametro<T1,T2> p = new Parametro<T1,T2>();
+//		//p.agregar(dim, angulo);
+//		pares.add(p);
+//		return p;
+//	}
+
 
 }

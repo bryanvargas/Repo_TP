@@ -1,28 +1,22 @@
 package com.repo.tp;
 
 
-public abstract class Figura {
+public abstract class Figura{
 	protected String nombre;
 	protected  Parametro<Double, Integer> dimenciones;
 	
 	public Figura(String nombre, Parametro<Double,Integer> dimenciones){
 		setNombre(nombre);
-		this.dimenciones = dimenciones;
-		
-		
-		}
+		this.dimenciones = dimenciones;	
+	}
 
 	public String getNombre() {
 		return nombre;
 	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre==null?"figura":nombre;
-	}
-	
-
-	
-	
-	
+	}	
 	public Parametro<Double, Integer> getDimenciones() {
 		return dimenciones;
 	}
@@ -65,15 +59,7 @@ public abstract class Figura {
 		int parametrosB = other.dimenciones.pares.size();
 		if(parametrosA!=parametrosB){
 			return false;
-		}
-//		for (Parametro<Double,Integer> tupla : dimenciones.pares) {
-//			for(Parametro<Double,Integer> tupla2 : other.dimenciones.pares){
-//				if(tupla.equals(tupla2));				
-//				return false;
-//			}	
-//		}
-		
-		
+		}		
 		return true;
 	}
 
@@ -84,5 +70,11 @@ public abstract class Figura {
 		return this.nombre+dimenciones.toString();
 	}
 	
+	public static  Parametro<Double, Integer> agregarDimencion(double dim,int angulo){
+		Parametro<Double,Integer> p = new Parametro<Double,Integer>();
+		p.agregar(dim, angulo);
+		//this.dimenciones.pares.add(p);
+		return p;
+	}
 	
 }

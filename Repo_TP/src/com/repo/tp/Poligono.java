@@ -1,9 +1,11 @@
 package com.repo.tp;
 public class Poligono extends Figura{
+	
 	protected int caras;
 
     public Poligono(String nombre,Parametro<Double,Integer> dimenciones ) {
 		super(nombre, dimenciones);
+		this.caras = this.dimenciones.pares.size();
 	}  
     
 	public int getCaras() {
@@ -27,30 +29,6 @@ public class Poligono extends Figura{
 			perim += this.dimenciones.pares.get(i).getDim();
 		}
 		return perim;
-	}
-
-//	@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + caras;
-//		return result;
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (!super.equals(obj))
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Poligono other = (Poligono) obj;
-//		if (caras != other.caras)
-//			return false;
-//		return true;
-//	}
-
-	
+	}	
 
 }

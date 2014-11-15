@@ -6,7 +6,7 @@ public class Rectangulo extends Poligono {
 		super(nombre,dimenciones);
 		
 	}
-	
+	@Override
 	public double perimetro(){
 		double d= super.perimetro();
 		return d*2.0;		

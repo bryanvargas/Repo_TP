@@ -20,5 +20,14 @@ public class Elipse extends Figura {
 		return 2*Math.PI*(Math.sqrt((a+b)/2));
 	}
 	
+	@Override
+	public String toString(){
+		String salida = "";		
+		for(int i=0;i<dimenciones.pares.size();i++){
+			salida+= " radio"+(i+1)+": " +"("+dimenciones.pares.get(i).getDim()+")";
+		}		
+		return salida;
 
+	}
+	
 }
