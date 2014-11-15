@@ -69,6 +69,7 @@ public class Test {
 		System.out.println(d1.interseccion(d2));
 		System.out.println("********************************");
 		System.out.println("********************************");
+		System.out.println(f1.caras);
 		
 		//System.out.println( ((Triangulo) f5).getCaras() );
 		
@@ -143,9 +144,11 @@ public class Test {
 		
 		Figura f1 = new Cuadrado("Cuad1");
 		f1.agregarDimencion(12, 90);
+		
 		//faltan parametros en el contructor de cuadrado!
 		Figura f2 = new Cuadrado("Cuad2");
 		f2.agregarDimencion(24, 90);
+		f2.agregarDimencion(12, 90);
 		//faltan parametros en el contructor de cuadrado!
 		Dibujo d1 = new Dibujo("Dos Cuadrados");
 		Dibujo d2 = new Dibujo("Otros dos Cuadrados");

@@ -2,7 +2,9 @@ package com.repo.tp;
 
 public class Triangulo extends Poligono {
 	public Triangulo(String nombre) {
-		super(nombre);		}	
+		super(nombre);
+		this.setCaras(3);
+		}	
 	
 	@Override
 	public double area() {		

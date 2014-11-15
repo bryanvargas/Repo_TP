@@ -4,6 +4,7 @@ public class Rectangulo extends Poligono {
 	
 	public Rectangulo(String nombre/*, Parametro<Double, Integer> dimenciones*/){
 		super(nombre/*,dimenciones*/);
+		this.setCaras(2);
 		
 	}
 

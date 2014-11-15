@@ -30,12 +30,14 @@ public class Parametro <T1,T2>{
 	public void setAngulo(T2 angulo) {
 		this.angulo = angulo;
 	}
-//	public void agregar(Parametro<T1,T2> p){
-//		pares.add(p);	
-//	}	
+
 	public Parametro<T1,T2> iesimo(int i){
 		return  pares.get(i);
-	}	
+	}
+	
+	public int cantidadPares(){
+		return this.pares.size();
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -82,7 +84,5 @@ public class Parametro <T1,T2>{
 	public void agregar(T1 i, T2 d) {
 		this.pares.add(new Parametro<T1,T2>(i,d));	
 	}	
-
-
 
 }

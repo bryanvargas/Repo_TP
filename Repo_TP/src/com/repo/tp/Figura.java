@@ -3,6 +3,7 @@ package com.repo.tp;
 
 public abstract class Figura{
 	protected String nombre;
+	protected int caras;
 	protected  Parametro<Double, Integer> dimenciones = new  Parametro<Double, Integer>(); 
 	
 	public Figura(String nombre/*, Parametro<Double,Integer> dimenciones*/){
@@ -44,9 +45,9 @@ public abstract class Figura{
 		if (getClass() != obj.getClass())
 			return false;
 		Figura other = (Figura) obj;
-		if(!(this instanceof Figura)){
-			return false;
-		}
+//		if(!(this instanceof Figura)){
+//			return false;
+//		}
 		if (dimenciones == null) {
 			if (other.dimenciones != null)
 				return false;
@@ -73,10 +74,12 @@ public abstract class Figura{
 		return this.nombre+dimenciones.toString();
 	}
 	
-	public  void agregarDimencion(double dim,int angulo){
-		//Parametro<Double,Integer> p = new Parametro<Double,Integer>();
-		this.dimenciones.agregar(dim, angulo);
-		//return p;
+	public  void agregarDimencion(double dim,int angulo){	
+			if(this.dimenciones.cantidadPares()<this.caras)
+				this.dimenciones.agregar(dim, angulo);
+			else
+				throw new RuntimeException("el "+ this.nombre +
+						" solo tiene "+ this.caras+" caras, Usted ingreso paramentros de mas ");
 	}
 	
 }

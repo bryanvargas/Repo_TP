@@ -4,6 +4,7 @@ public class Trapecio extends Poligono{
 	
 	public Trapecio(String nombre) {
 		super(nombre);
+		this.setCaras(4);
 
 	}
 	@Override
