@@ -2,10 +2,11 @@ package com.repo.tp;
 
 public class Rectangulo extends Poligono {
 	
-	public Rectangulo(String nombre, Parametro<Double, Integer> dimenciones){
-		super(nombre,dimenciones);
+	public Rectangulo(String nombre/*, Parametro<Double, Integer> dimenciones*/){
+		super(nombre/*,dimenciones*/);
 		
 	}
+
 	@Override
 	public double perimetro(){
 		double d= super.perimetro();

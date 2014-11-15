@@ -3,8 +3,8 @@ public class Poligono extends Figura{
 	
 	protected int caras;
 
-    public Poligono(String nombre,Parametro<Double,Integer> dimenciones ) {
-		super(nombre, dimenciones);
+    public Poligono(String nombre/*Parametro<Double,Integer> dimenciones*/ ) {
+		super(nombre/*, dimenciones*/);
 		this.caras = this.dimenciones.pares.size();
 	}  
     

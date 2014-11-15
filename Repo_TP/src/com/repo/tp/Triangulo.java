@@ -1,9 +1,8 @@
 package com.repo.tp;
 
 public class Triangulo extends Poligono {
-	public Triangulo(String nombre,Parametro<Double,Integer> dimenciones) {
-		super(nombre, dimenciones);	
-	}	
+	public Triangulo(String nombre) {
+		super(nombre);		}	
 	
 	@Override
 	public double area() {		

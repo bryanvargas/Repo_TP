@@ -6,56 +6,46 @@ public class Test {
 		test1();
 		//test2();
 		//test3();
+		testDiosExiste();
 		Coordenada coord1 = new Coordenada(3,2); 
 		Coordenada coord2 = new Coordenada(3,8);
-		Coordenada coord3 = new Coordenada(4,16);
+		Coordenada coord3 = new Coordenada(4,16);	
 		
-		Parametro<Double,Integer> rectangulo = new Parametro<Double,Integer>();
-		rectangulo.agregar(2.0,90);
-		rectangulo.agregar(4.0,90);
+		Figura f1 = new Rectangulo("Rectangulo1");
+		f1.agregarDimencion(2.0,90);
+		f1.agregarDimencion(4.0,90);
+	
+		Figura f2 = new Rectangulo("Rectangulo2");
+		f2.agregarDimencion(4.0,90);
+		f2.agregarDimencion(8.0,90);
+		Figura f5 = new Triangulo("Triangulo");
+		f5.agregarDimencion(9.0,90);
+		f5.agregarDimencion(4.0,90);
+		f5.agregarDimencion(10.0, 90);
 		
-		Parametro<Double,Integer> rectangulo2 =	new Parametro<Double,Integer>();
-		rectangulo2.agregar(4.0,90);
-		rectangulo2.agregar(8.0,90);
+		Figura f3 = new Poligono("Poligono");
+		f3.agregarDimencion(9.0,90);
+		f3.agregarDimencion(4.0,90);
+		f3.agregarDimencion(10.0, 90);
+		f3.agregarDimencion(10.0, 65);
+		f3.agregarDimencion(10.0, 87);
+		f3.agregarDimencion(10.0, 15);
+		f3.agregarDimencion(10.0, 39);
+		f3.agregarDimencion(10.0, 78);
+		;
+		Figura f4 = new Poligono("Poligono");
+		f4.agregarDimencion(9.0,90);
+		f4.agregarDimencion(4.0,90);
+		f4.agregarDimencion(10.0, 90);
+		f4.agregarDimencion(10.0, 65);
+		f4.agregarDimencion(10.0, 87);
+		f4.agregarDimencion(10.0, 15);
+		f4.agregarDimencion(10.0, 39);
+		f4.agregarDimencion(10.0, 78);
 		
-		Parametro<Double,Integer> tri = new Parametro<Double,Integer>();
-		tri.agregar(9.0,90);
-		tri.agregar(4.0,90);
-		tri.agregar(10.0, 90);
-		
-		Parametro<Double,Integer> poligono = new Parametro<Double,Integer>();
-		poligono.agregar(9.0,90);
-		poligono.agregar(4.0,90);
-		poligono.agregar(10.0, 90);
-		poligono.agregar(10.0, 65);
-		poligono.agregar(10.0, 87);
-		poligono.agregar(10.0, 15);
-		poligono.agregar(10.0, 39);
-		poligono.agregar(10.0, 78);
-		
-		Parametro<Double,Integer> poligonoDos =	new Parametro<Double,Integer>();
-		poligonoDos.agregar(9.0,90);
-		poligonoDos.agregar(4.0,90);
-		poligonoDos.agregar(10.0, 90);
-		poligonoDos.agregar(10.0, 65);
-		poligonoDos.agregar(10.0, 87);
-		poligonoDos.agregar(10.0, 15);
-		poligonoDos.agregar(10.0, 39);
-		poligonoDos.agregar(10.0, 78);
-		
-		
-		Parametro<Double,Integer> parametrosElipse= new Parametro<Double,Integer>();
-		parametrosElipse.agregar(5.0, 0);
-		parametrosElipse.agregar(10.0, 0);
-		
-		
-		Figura f1 = new Rectangulo("Rectangulo1",rectangulo);
-		Figura f2 = new Rectangulo("Rectangulo2",rectangulo2);
-		Figura f5 = new Triangulo("Triangulo",tri);
-		Figura f3 = new Poligono("Poligono",poligono);
-		Figura f4 = new Poligono("Poligono",poligonoDos);
-		
-		Figura f7 = new Elipse("Elipse1", parametrosElipse);
+		Figura f7 = new Elipse("Elipse1");
+		f7.agregarDimencion(5.0, 0);
+		f7.agregarDimencion(10.0, 0);
 		
 		
 		Dibujo d1 = new Dibujo("Dos Figuras");
@@ -63,16 +53,14 @@ public class Test {
 		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f1)); 
 		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f2));
 		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord3,f3));
-		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f4));
-		
-	
+		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f4));	
 		
 		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f1));
 		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f2));
 		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord3,f3));		
 		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f5));
 		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f7));
-		//System.out.println(d1);
+		System.out.println(d1);
 		
 		System.out.println(d1);
 		System.out.println(d2);
@@ -82,13 +70,41 @@ public class Test {
 		System.out.println("********************************");
 		System.out.println("********************************");
 		
-		System.out.println( ((Triangulo) f5).getCaras() );
+		//System.out.println( ((Triangulo) f5).getCaras() );
 		
 //		System.out.println(d2);
 //		System.out.println(d1.equals(d2));
 //		System.out.println(poligono.equals(poligonoDos));
 		
 
+		
+	}
+	
+	
+	public static void testDiosExiste(){
+		
+		Coordenada coord1 = new Coordenada(3,2); 
+		Coordenada coord2 = new Coordenada(3,8);
+		Figura f1 = new Rectangulo("Rectangulo1");
+		f1.agregarDimencion(21.2, 90);
+		f1.agregarDimencion(12.1, 90);
+		Figura f2 = new Rectangulo("Rectangulo2");
+		f2.agregarDimencion(21.2, 90);
+		f2.agregarDimencion(12.1, 90);
+		Dibujo d1 = new Dibujo("Dos Figuras");
+		Dibujo d2 = new Dibujo("Otras Dos Figuras");
+		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f1)); 
+		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f2));
+		
+		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f2)); 
+		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f1));
+		System.out.println(d1);
+		System.out.println(d2);
+		System.out.println("El resultadoes: "+d1.equals(d2)); //false
+		System.out.println(d1.union(d2));
+		System.out.println(d1.interseccion(d2));
+		System.out.println("********************************");
+		System.out.println("********************************");
 		
 	}
 	//System.out.println(f1.perimetro());
@@ -125,16 +141,18 @@ public class Test {
 		Parametro<Double,Integer> cuadradroParametros2= new Parametro<Double,Integer>();
 		cuadradroParametros2.agregar(4.0, 90);
 		
-		Figura f1 = new Cuadrado("Cuad1",2);
+		Figura f1 = new Cuadrado("Cuad1");
+		f1.agregarDimencion(12, 90);
 		//faltan parametros en el contructor de cuadrado!
-		Figura f2 = new Cuadrado("Cuad2",4);
+		Figura f2 = new Cuadrado("Cuad2");
+		f2.agregarDimencion(24, 90);
 		//faltan parametros en el contructor de cuadrado!
 		Dibujo d1 = new Dibujo("Dos Cuadrados");
 		Dibujo d2 = new Dibujo("Otros dos Cuadrados");
 		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f1)); 
 		d1.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f2));
-		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f2)); 
-		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f1));
+		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord1,f1)); 
+		d2.agregarFigura(new Tupla<Coordenada,Figura>(coord2,f2));
 		System.out.println(d1);
 		System.out.println(d2);
 		System.out.println("El resultadoes: "+d1.equals(d2)); //false

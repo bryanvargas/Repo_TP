@@ -81,14 +81,8 @@ public class Parametro <T1,T2>{
 
 	public void agregar(T1 i, T2 d) {
 		this.pares.add(new Parametro<T1,T2>(i,d));	
-	}
-	
-//	public  Parametro<T1, T2> agregar(T1 dim,T2 angulo){
-//		Parametro<T1,T2> p = new Parametro<T1,T2>();
-//		//p.agregar(dim, angulo);
-//		pares.add(p);
-//		return p;
-//	}
+	}	
+
 
 
 }

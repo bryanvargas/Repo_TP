@@ -3,11 +3,11 @@ package com.repo.tp;
 
 public abstract class Figura{
 	protected String nombre;
-	protected  Parametro<Double, Integer> dimenciones;
+	protected  Parametro<Double, Integer> dimenciones = new  Parametro<Double, Integer>(); 
 	
-	public Figura(String nombre, Parametro<Double,Integer> dimenciones){
+	public Figura(String nombre/*, Parametro<Double,Integer> dimenciones*/){
 		setNombre(nombre);
-		this.dimenciones = dimenciones;	
+		//this.dimenciones = dimenciones;	
 	}
 
 	public String getNombre() {
@@ -44,6 +44,9 @@ public abstract class Figura{
 		if (getClass() != obj.getClass())
 			return false;
 		Figura other = (Figura) obj;
+		if(!(this instanceof Figura)){
+			return false;
+		}
 		if (dimenciones == null) {
 			if (other.dimenciones != null)
 				return false;
@@ -70,11 +73,10 @@ public abstract class Figura{
 		return this.nombre+dimenciones.toString();
 	}
 	
-	public static  Parametro<Double, Integer> agregarDimencion(double dim,int angulo){
-		Parametro<Double,Integer> p = new Parametro<Double,Integer>();
-		p.agregar(dim, angulo);
-		//this.dimenciones.pares.add(p);
-		return p;
+	public  void agregarDimencion(double dim,int angulo){
+		//Parametro<Double,Integer> p = new Parametro<Double,Integer>();
+		this.dimenciones.agregar(dim, angulo);
+		//return p;
 	}
 	
 }

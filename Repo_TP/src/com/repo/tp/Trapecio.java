@@ -2,8 +2,8 @@ package com.repo.tp;
 
 public class Trapecio extends Poligono{
 	
-	public Trapecio(String nombre,Parametro<Double, Integer> dimenciones) {
-		super(nombre, dimenciones);
+	public Trapecio(String nombre) {
+		super(nombre);
 
 	}
 	@Override

@@ -2,8 +2,8 @@ package com.repo.tp;
 
 public class Elipse extends Figura {
 
-	public Elipse(String nombre,Parametro<Double,Integer> dimenciones) {
-		super(nombre,dimenciones);
+	public Elipse(String nombre) {
+		super(nombre);
 
 	}
 
