@@ -4,7 +4,7 @@ package com.repo.tp;
  * @FECHA ENTREGA:  17/11/2014
  * @PROGRAMACION_II  TP2
  * @CLIENTE: Sistema de Representacion UNGS
- * @Detalles: Sitema que realiza Dibujos apropiado para Figuras planares
+ * @Detalles: Sitema que realiza Dibujos apropiados para Figuras planares
  * 			
  ********************************************************************/
 
@@ -12,8 +12,8 @@ public class Test {
 
 	public static void main(String[] args) {
 		test1();
-		//test2();
-		//test3();		
+		test2();
+		test3();		
 	}
 
 	public static void test1(){
@@ -22,12 +22,11 @@ public class Test {
 		Coordenada coord2 = new Coordenada(3,8);
 		
 		Figura f1 = new Cuadrado("Cuadrado1");
-		f1.agregarDimencion(12, 90);
+		f1.agregarParametro(12, 90);
 
-		//faltan parametros en el contructor de cuadrado!
 		Figura f2 = new Cuadrado("Cuadrado2");
-		f2.agregarDimencion(24, 90);
-		//faltan parametros en el contructor de cuadrado!
+		f2.agregarParametro(24, 90);
+
 		
 		Dibujo d1 = new Dibujo("Dos Cuadrados: ");
 		Dibujo d2 = new Dibujo("Otros dos Cuadrados: ");
@@ -60,70 +59,70 @@ public class Test {
 			Coordenada coord6 = new Coordenada(9,8);
 			
 			Figura f1 = new Rectangulo("Rectangulo1");
-			f1.agregarDimencion(2.0,90);
-			f1.agregarDimencion(4.0,90);
+			f1.agregarParametro(2.0,90);
+			f1.agregarParametro(4.0,90);
 		
 			Figura f2 = new Rectangulo("Rectangulo2");
-			f2.agregarDimencion(4.0,90);
-			f2.agregarDimencion(8.0,90);
+			f2.agregarParametro(4.0,90);
+			f2.agregarParametro(8.0,90);
 			
 			Figura f3 = new Triangulo("Triangulo");
-			f3.agregarDimencion(5.0,90);
-			f3.agregarDimencion(5.0,90);
-			f3.agregarDimencion(7.0, 90);
+			f3.agregarParametro(5.0,90);
+			f3.agregarParametro(5.0,90);
+			f3.agregarParametro(7.0, 90);
 			
 			Figura f4 = new Poligono("Poligono");
-			f4.agregarDimencion(9.0,90);
-			f4.agregarDimencion(4.0,90);
-			f4.agregarDimencion(10.0, 90);
-			f4.agregarDimencion(10.0, 65);
-			f4.agregarDimencion(10.0, 87);
-			f4.agregarDimencion(10.0, 15);
-			f4.agregarDimencion(10.0, 39);
-			f4.agregarDimencion(10.0, 78);
+			f4.agregarParametro(9.0,90);
+			f4.agregarParametro(4.0,90);
+			f4.agregarParametro(10.0, 90);
+			f4.agregarParametro(10.0, 65);
+			f4.agregarParametro(10.0, 87);
+			f4.agregarParametro(10.0, 15);
+			f4.agregarParametro(10.0, 39);
+			f4.agregarParametro(10.0, 78);
 			;
 			Figura f5 = new Poligono("Poligono");
-			f5.agregarDimencion(9.0,90);
-			f5.agregarDimencion(4.0,90);
-			f5.agregarDimencion(10.0, 90);
-			f5.agregarDimencion(10.0, 65);
-			f5.agregarDimencion(10.0, 87);
-			f5.agregarDimencion(10.0, 15);
-			f5.agregarDimencion(10.0, 39);
-			f5.agregarDimencion(10.0, 78);
+			f5.agregarParametro(9.0,90);
+			f5.agregarParametro(4.0,90);
+			f5.agregarParametro(10.0, 90);
+			f5.agregarParametro(10.0, 65);
+			f5.agregarParametro(10.0, 87);
+			f5.agregarParametro(10.0, 15);
+			f5.agregarParametro(10.0, 39);
+			f5.agregarParametro(10.0, 78);
 			
 			Figura f6 = new Elipse("Elipse1");
-			f6.agregarDimencion(5.0, 0);
-			f6.agregarDimencion(10.0, 0);
+			f6.agregarParametro(5.0, 0);
+			f6.agregarParametro(10.0, 0);
 			
 			Figura f7 = new Elipse("Elipse2");
-			f7.agregarDimencion(10.0, 0);
-			f7.agregarDimencion(15.0, 0);
+			f7.agregarParametro(10.0, 0);
+			f7.agregarParametro(15.0, 0);
 			
 			Figura f8 = new Trapecio("Trapecio1");
-			f8.agregarDimencion(20.0, 45);
-			f8.agregarDimencion(8.0, 65);
-			f8.agregarDimencion(10.0, 65);
-			f8.agregarDimencion(8.0, 45);
+			f8.agregarParametro(20.0, 45);
+			f8.agregarParametro(8.0, 65);
+			f8.agregarParametro(10.0, 65);
+			f8.agregarParametro(8.0, 45);
 			
 			
 			Figura f9 = new Trapecio("trapecio2");
-			f9.agregarDimencion(40.0, 45);
-			f9.agregarDimencion(16.0, 60);
-			f9.agregarDimencion(20.0, 60);
-			f9.agregarDimencion(16.0, 45);
+			f9.agregarParametro(40.0, 45);
+			f9.agregarParametro(16.0, 60);
+			f9.agregarParametro(20.0, 60);
+			f9.agregarParametro(16.0, 45);
 			
 			Figura f10 = new Cuadrado("Cuadrado1");
-			f10.agregarDimencion(2.0, 90);			
+			f10.agregarParametro(2.0, 90);			
 			
 			Figura f11 = new Cuadrado("Cuadrado2");
-			f11.agregarDimencion(4.0, 90);	
+			f11.agregarParametro(4.0, 90);	
 			
 			Figura f12 = new Cubo("Cubo1");
-			f12.agregarDimencion(2.0, 90);			
+			f12.agregarParametro(2.0, 90);			
 			
 			Figura f13 = new Cubo("Cubo2");
-			f13.agregarDimencion(4.0, 90);	
+			f13.agregarParametro(4.0, 90);	
 			
 			Dibujo d1 = new Dibujo("Figuras");
 			Dibujo d2 = new Dibujo("Otras Figuras");
@@ -163,6 +162,7 @@ public class Test {
 			System.out.println(d1.interseccion(d2));
 			System.out.println("********************************");
 			System.out.println("********************************");
+
 			
 			
 		
@@ -175,12 +175,12 @@ public class Test {
 
 			
 			Figura f1 = new Rectangulo("Rectangulo1");
-			f1.agregarDimencion(21.2, 90);
-			f1.agregarDimencion(12.1, 90);
+			f1.agregarParametro(21.2, 90);
+			f1.agregarParametro(12.1, 90);
 			
 			Figura f2 = new Rectangulo("Rectangulo777");
-			f2.agregarDimencion(21.2, 90);
-			f2.agregarDimencion(12.1, 90);
+			f2.agregarParametro(21.2, 90);
+			f2.agregarParametro(12.1, 90);
 			
 			Dibujo d1 = new Dibujo("Dos Rectangulos");
 			Dibujo d2 = new Dibujo("Otros dos Rectangulos");

@@ -1,7 +1,6 @@
 package com.repo.tp;
 public class Poligono extends Figura{
-	
-	//protected int caras;
+
 
     public Poligono(String nombre) {
 		super(nombre);

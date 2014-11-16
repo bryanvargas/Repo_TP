@@ -34,6 +34,19 @@ public abstract class Figura{
 	public void setDimenciones(Parametro<Double, Integer> dimenciones) {
 		this.parametros = dimenciones;
 	}
+	
+	/**Agrega en parametro formado por
+	 * la longitud de una cara o radio  y su angulo
+	 * @param parametro
+	 * @param angulo
+	 */
+	public  void agregarParametro(double p,int a){	
+		if(this.parametros.cantidadParametros()<this.caras)
+			this.parametros.agregar(p, a);
+		else
+			throw new RuntimeException("el "+ this.nombre +
+					" solo tiene "+ this.caras+" caras, Usted ingreso paramentros de mas ");
+}
 
 	@Override
 	public int hashCode() {
@@ -71,14 +84,6 @@ public abstract class Figura{
 	
 	public String toString(){
 		return this.nombre+": "+parametros.toString();
-	}
-	
-	public  void agregarDimencion(double dim,int angulo){	
-			if(this.parametros.cantidadParametros()<this.caras)
-				this.parametros.agregar(dim, angulo);
-			else
-				throw new RuntimeException("el "+ this.nombre +
-						" solo tiene "+ this.caras+" caras, Usted ingreso paramentros de mas ");
 	}
 	
 	public abstract double area();

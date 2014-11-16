@@ -45,8 +45,7 @@ public class Dibujo {
 				}
 			}		
 		return dibujoInterseccion;
-	   }
-	
+	   }	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,7 +54,6 @@ public class Dibujo {
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object otroDibujo) {
 		boolean ret=true;
