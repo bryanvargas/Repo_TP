@@ -5,11 +5,19 @@ public class Triangulo extends Poligono {
 		super(nombre);
 		this.setCaras(3);
 		}	
-	
+
+	/**
+	 * Formula de Heron
+	 */
 	@Override
-	public double area() {		
-		return (this.dimenciones.iesimo(0).getDim()*
-				this.dimenciones.iesimo(1).getDim())/2;
-	}	
+	public double area(){
+		double a = this.getDimenciones().iesimo(0).getDim();
+		double b = this.getDimenciones().iesimo(1).getDim();
+		double c = this.getDimenciones().iesimo(2).getDim();
+		double p = (a+b+c)/2;
+		return Math.sqrt(p*(p-a)*(p-b)*(p-c));
+		
+		
+	}
 	
 }

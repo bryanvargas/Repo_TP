@@ -3,31 +3,23 @@ public class Poligono extends Figura{
 	
 	//protected int caras;
 
-    public Poligono(String nombre/*Parametro<Double,Integer> dimenciones*/ ) {
-		super(nombre/*, dimenciones*/);
-		//this.caras = this.dimenciones.pares.size();
-		this.setCaras(100000);
+    public Poligono(String nombre) {
+		super(nombre);
+		this.setCaras(1000000);
 	}  
-    
-	public int getCaras() {
-		return caras;
-	}
-	
-	public void setCaras(int caras) {
-		this.caras = caras;
-	}
+
 	
 	@Override
 	public  double area(){
-		return 0.0;
+		return 1.0;
 	}
 	
 
 	@Override
 	public double perimetro() {
 		double perim =0;
-		for(int i=0;i<this.dimenciones.pares.size();i++){
-			perim += this.dimenciones.pares.get(i).getDim();
+		for(int i=0;i<this.parametros.parametros.size();i++){
+			perim += this.parametros.parametros.get(i).getDim();
 		}
 		return perim;
 	}	

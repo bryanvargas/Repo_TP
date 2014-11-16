@@ -16,11 +16,7 @@ public class Dibujo {
 
 	public void agregarFigura(Tupla<Coordenada,Figura> t){
 		dibujo.add(t);		
-	}
-	
-	
-
-	
+	}	
 	public int cantidad(){
 		return dibujo.size();
 	}
@@ -28,7 +24,7 @@ public class Dibujo {
 
 	
 	public Dibujo union(Dibujo d2){
-		Dibujo dibujoUnion = new Dibujo("DibujoUnion()");
+		Dibujo dibujoUnion = new Dibujo("DibujoUnion() ");
 		dibujoUnion.dibujo.addAll(this.dibujo);
 		for (Tupla<Coordenada,Figura> tupla : d2.dibujo){
 			dibujoUnion.agregarFigura(tupla);
@@ -37,7 +33,7 @@ public class Dibujo {
 	}
 	
 	public Dibujo interseccion(Dibujo d2){
-		Dibujo dibujoInterseccion = new Dibujo("DibujoInterseccion()");
+		Dibujo dibujoInterseccion = new Dibujo("DibujoInterseccion() ");
 		if(this.equals(d2))
 			dibujoInterseccion.dibujo.addAll(this.dibujo);
 		else{
@@ -65,10 +61,10 @@ public class Dibujo {
 		boolean ret=true;
 		boolean ret2=false;
 		Dibujo otroDib = (Dibujo)otroDibujo;
-		for (Tupla<Coordenada,Figura> tupla : dibujo) {
-			for(Tupla<Coordenada,Figura> otraTupla: otroDib.dibujo){
-				ret2=ret2 || tupla.equals(otraTupla)
-						|| tupla.y.equals(otroDib);
+		for (Tupla<Coordenada,Figura> fig1 : dibujo) {
+			for(Tupla<Coordenada,Figura> otroFig: otroDib.dibujo){
+				ret2=ret2 || fig1.equals(otroFig);//compara <cordenadas, figuras>
+						//|| fig1.getY().equals(otroDib);//compara figuras
 			}
 			ret=ret && ret2;
 			ret2=false;
@@ -78,7 +74,7 @@ public class Dibujo {
 
 	public String toString(){
 		String salida = "";
-		salida += nombre + ":\n";
+		salida += this.nombre + ":\n";
 		for(int i=0;i<dibujo.size();i++){
 			Tupla<Coordenada, Figura> aux = dibujo.get(i);			
 			salida += aux.x.toString() +" "+ aux.y.toString() + "\n";
